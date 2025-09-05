@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web Portfolio</title>
+  <style>
+    /* --- Reset --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+    }
+    nav button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      padding: 14px 22px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+    nav button:hover {
+      background: #444;
+      border-radius: 6px;
+    }
+    #content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-height: 300px;
+    }
+    h2 {
+      color: #1e3c72;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    .project {
+      margin-bottom: 15px;
+      padding: 12px;
+      background: #f9fbff;
+      border-left: 5px solid #2a5298;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+    .project:hover {
+      background: #eef3ff;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: #ccc;
+      margin-top: 20px;
+      border-top: 3px solid #1e3c72;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Interactive Web Portfolio</h1>
+    <p>CHANDRU.M.P | B.Sc. AI & ML</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
+  <div id="content"></div>
+
+  <footer>
+    <p>© 2025 CHANDRU.M.P | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function showSection(section) {
+      let content = document.getElementById('content');
+      if (section === 'home') {
+        content.innerHTML = `
+          <h2>Welcome!</h2>
+          <p>Hello! I am <strong>CHANDRU.M.P</strong>, a web developer and AI/ML student.</p>
+          <p>This portfolio is a showcase of my skills, projects, and learning journey.</p>
+        `;
+      } else if (section === 'about') {
+        content.innerHTML = `
+          <h2>About Me</h2>
+          <p>I am pursuing B.Sc. AI & ML. I enjoy building clean, responsive websites and exploring Artificial Intelligence.</p>
+          <p>Skills: HTML, CSS, JavaScript, Python (beginner), AI/ML basics.</p>
+        `;
+      } else if (section === 'projects') {
+        content.innerHTML = `
+          <h2>My Projects</h2>
+          <div class="project"><strong>Interactive Web Portfolio</strong> - This portfolio website made with HTML, CSS & JS.</div>
+          <div class="project"><strong>To-Do App</strong> - A task manager that helps organize daily work.</div>
+          <div class="project"><strong>Calculator</strong> - A clean calculator built using JavaScript.</div>
+        `;
+      } else if (section === 'contact') {
+        content.innerHTML = `
+          <h2>Contact Me</h2>
+          <p>Email: chandrump11206@mail.com</p>
+          <p>Phone: ‪+91-9791914820‬</p>
+        `;
+      }
+    }
+    // Load home by default
+    showSection('home');
+  </script>
+</body>
+</html>
